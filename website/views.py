@@ -13,7 +13,7 @@ def home(request):
 
 		if user is not None:
 			login(request, user)
-			messages.success(request, "You are logged in")
+			messages.success(request, "You are Logged in")
 			return redirect('home')
 		else:
 			messages.success(request, "Error logging in...")
@@ -25,4 +25,6 @@ def home(request):
 # 	pass
 
 def logout_user(request):
-	pass
+	logout(request)
+	messages.success(request, "You Have Been Logged Out...")
+	return redirect('home')
